@@ -45,6 +45,11 @@
     <Compile Include="IRepositories\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\HogarDeAncianos.ParametersObjects\HogarDeAncianos.ParametersObjects.csproj">
+      <Project>{03430844-9A87-4698-A389-8CEF5241B02A}</Project>
+      <Name>HogarDeAncianos.ParametersObjects</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

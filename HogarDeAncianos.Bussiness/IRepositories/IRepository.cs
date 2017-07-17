@@ -14,7 +14,7 @@ namespace HogarDeAncianos.Bussiness.IRepositories
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns></returns>
-        IEnumerable<T> GetManyDocuments();
+         Task<IEnumerable<T>> GetManyDocumentsAsync();
 
 
         /// <summary>

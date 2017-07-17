@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HogarDeAncianos.ParametersObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,20 @@ namespace HogarDeAncianos.Bussiness.Entities
 {
     public class Employee
     {
+        public Employee(EmployeeParameter parameter)
+        {
+            this.Name = parameter.Name;
+            this.Lastname = parameter.LastName;
+            this.Identification = parameter.Identification;
+            this.Email = parameter.Email;
+            this.EntryDate = parameter.EntryDate;
+            this.Occupation = parameter.Occupation;
+            this.Phone = parameter.Phone;
+            this.State = parameter.State;
+        }
+
+        public Employee(){}
+
         public string Name { get; set; }
 
         public string Lastname { get; set; }

@@ -13,3 +13,20 @@ C:\Users\eytat\Documents\Visual Studio 2017\Projects\HogarDeAncianos\HogarDeAnci
 C:\Users\eytat\Documents\Visual Studio 2017\Projects\HogarDeAncianos\HogarDeAncianos.DataAccess\bin\Debug\MongoDB.Driver.Core.xml
 C:\Users\eytat\Documents\Visual Studio 2017\Projects\HogarDeAncianos\HogarDeAncianos.DataAccess\obj\Debug\HogarDeAncianos.DataAccess.dll
 C:\Users\eytat\Documents\Visual Studio 2017\Projects\HogarDeAncianos\HogarDeAncianos.DataAccess\obj\Debug\HogarDeAncianos.DataAccess.pdb
+C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.DataAccess\bin\Debug\HogarDeAncianos.DataAccess.dll.config
+C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.DataAccess\bin\Debug\HogarDeAncianos.DataAccess.dll
+C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.DataAccess\bin\Debug\HogarDeAncianos.DataAccess.pdb
+C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.DataAccess\bin\Debug\HogarDeAncianos.Bussiness.dll
+C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.DataAccess\bin\Debug\MongoDB.Bson.dll
+C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.DataAccess\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.DataAccess\bin\Debug\MongoDB.Driver.dll
+C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.DataAccess\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.DataAccess\bin\Debug\HogarDeAncianos.ParametersObjects.dll
+C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.DataAccess\bin\Debug\HogarDeAncianos.Bussiness.pdb
+C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.DataAccess\bin\Debug\MongoDB.Bson.xml
+C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.DataAccess\bin\Debug\MongoDB.Driver.xml
+C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.DataAccess\bin\Debug\MongoDB.Driver.Core.xml
+C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.DataAccess\bin\Debug\HogarDeAncianos.ParametersObjects.pdb
+C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.DataAccess\obj\Debug\HogarDeAncianos.DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.DataAccess\obj\Debug\HogarDeAncianos.DataAccess.dll
+C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.DataAccess\obj\Debug\HogarDeAncianos.DataAccess.pdb

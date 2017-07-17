@@ -2,6 +2,7 @@
 using HogarDeAncianos.Bussiness.IRepositories;
 using HogarDeAncianos.DataAccess.Connection;
 using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -53,9 +54,34 @@ namespace HogarDeAncianos.DataAccess.Repositories.People
             return true;
         }
 
-        public IEnumerable<Employee> GetManyDocuments()
+        public async Task<IEnumerable<Employee>> GetManyDocumentsAsync()
         {
-            throw new NotImplementedException();
+            IMongoCollection<BsonDocument> collection = ObtenerColeccion();
+            List<BsonDocument> EmployeeListBson = new List<BsonDocument>();
+            List<Employee> EmployeeList = new List<Employee>();
+            IEnumerable<BsonElement> Prueba = new List<BsonElement>();
+            try
+            {
+                 await collection.Find(new BsonDocument()).ForEachAsync(X => EmployeeListBson.Add(X));
+           
+                foreach (BsonDocument documento in EmployeeListBson)
+                {
+                  BsonElement name = documento.GetElement(1);
+                  BsonElement Lastname = documento.GetElement(2);
+                  BsonElement  Identification= documento.GetElement(3);
+                  BsonElement  Phone= documento.GetElement(4);
+                  BsonElement Email = documento.GetElement(5);
+                  BsonElement EntryDate = documento.GetElement(6);
+                  BsonElement occupation = documento.GetElement(7);
+                  BsonElement state = documento.GetElement(8);
+                }
+
+
+
+            }
+            catch (Exception)
+            { }
+            return EmployeeList;
         }
 
         public Employee GetOneDocument(string id)
