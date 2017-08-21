@@ -3,6 +3,7 @@ using HogarDeAncianos.Bussiness.IRepositories;
 using HogarDeAncianos.DataAccess.Connection;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -25,7 +26,7 @@ namespace HogarDeAncianos.DataAccess.Repositories.People
 
         public IMongoCollection<BsonDocument> ObtenerColeccion()
         {
-            return _dataBase.GetCollection<BsonDocument>("Users");
+            return _dataBase.GetCollection<BsonDocument>("EmployeesDB");
         }
 
         public Employee CreateOneDocument(Employee item)
@@ -50,7 +51,7 @@ namespace HogarDeAncianos.DataAccess.Repositories.People
         public bool DeleteOneDocument(string id)
         {
             IMongoCollection<BsonDocument> collection = ObtenerColeccion();
-            collection.DeleteManyAsync(Builders<BsonDocument>.Filter.Eq("Id", id));
+            collection.DeleteManyAsync(Builders<BsonDocument>.Filter.Eq("Cedula", id));
             return true;
         }
 
@@ -59,35 +60,53 @@ namespace HogarDeAncianos.DataAccess.Repositories.People
             IMongoCollection<BsonDocument> collection = ObtenerColeccion();
             List<BsonDocument> EmployeeListBson = new List<BsonDocument>();
             List<Employee> EmployeeList = new List<Employee>();
-            IEnumerable<BsonElement> Prueba = new List<BsonElement>();
             try
             {
                  await collection.Find(new BsonDocument()).ForEachAsync(X => EmployeeListBson.Add(X));
-           
+
                 foreach (BsonDocument documento in EmployeeListBson)
                 {
-                  BsonElement name = documento.GetElement(1);
-                  BsonElement Lastname = documento.GetElement(2);
-                  BsonElement  Identification= documento.GetElement(3);
-                  BsonElement  Phone= documento.GetElement(4);
-                  BsonElement Email = documento.GetElement(5);
-                  BsonElement EntryDate = documento.GetElement(6);
-                  BsonElement occupation = documento.GetElement(7);
-                  BsonElement state = documento.GetElement(8);
+                    var data = documento.ToList();
+                    Employee employee = new Employee
+                    {
+                        Name = data[1].Value.ToString(),
+                        Lastname = data[2].Value.ToString(),
+                        Identification = data[3].Value.ToString(),
+                        Email = data[4].Value.ToString(),
+                        State = data[5].Value.ToBoolean(),
+                        EntryDate = data[6].Value.ToUniversalTime(),
+                        Occupation = data[7].Value.ToString(),
+                        Phone = data[8].Value.ToString()
+                    };
+
+                EmployeeList.Add(employee);
                 }
-
-
-
             }
             catch (Exception)
             { }
             return EmployeeList;
         }
 
-        public Employee GetOneDocument(string id)
+        public async Task<Employee> GetOneDocument(string id)
         {
             IMongoCollection<BsonDocument> collection = ObtenerColeccion();
-            throw new NotImplementedException();
+            var filter = Builders<BsonDocument>.Filter.Eq("Cedula", id);
+            var result = await collection.Find(filter).ToListAsync();
+
+            var data = result[0].ToList();
+            Employee employee = new Employee
+            {
+                Name = data[1].Value.ToString(),
+                Lastname = data[2].Value.ToString(),
+                Identification = data[3].Value.ToString(),
+                Email = data[4].Value.ToString(),
+                State = data[5].Value.ToBoolean(),
+                EntryDate = data[6].Value.ToUniversalTime(),
+                Occupation = data[7].Value.ToString(),
+                Phone = data[8].Value.ToString()
+            };
+
+            return employee; 
         }
 
         public bool UpdateOneDument(string id, Employee item)

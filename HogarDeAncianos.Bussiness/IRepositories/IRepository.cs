@@ -22,7 +22,7 @@ namespace HogarDeAncianos.Bussiness.IRepositories
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        T GetOneDocument(string id);
+        Task<T> GetOneDocument(string id);
 
 
         /// <summary>

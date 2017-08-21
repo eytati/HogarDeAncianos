@@ -30,7 +30,7 @@ namespace HogarDeAncianos.Controllers.People
                     LastName = employee.Lastname,
                     Name = employee.Name,
                     Occupation = employee.Occupation,
-                    Phone= employee.Occupation,
+                    Phone= employee.Phone,
                     State = employee.State
                 };
 
@@ -62,64 +62,86 @@ namespace HogarDeAncianos.Controllers.People
                 ModelState.AddModelError("", "Algunos de los campos requeridos no esta presente");
                 return View(modelo);
             }
-     }
+        }
 
-            //[HttpGet]
-            //public ActionResult Detalles(string id)
+        [HttpGet]
+        public async Task<ActionResult> Details(string id)
+        {
+            Employee employee = await empleados.GetOneDocument(id);
+            EmployeeViewModel model = new EmployeeViewModel
+            {
+                Email = employee.Email,
+                EntryDate = employee.EntryDate,
+                Identification = employee.Identification,
+                LastName = employee.Lastname,
+                Name = employee.Name,
+                Occupation = employee.Occupation,
+                Phone = employee.Phone,
+                State = employee.State
+            };
+
+            return View(model);
+
+
+
+            //EmpleadoAbs empleado = new EmpleadoModeloConcreto(empleados, id);
+            //if (empleado.Load())
             //{
-            //    EmpleadoAbs empleado = new EmpleadoModeloConcreto(empleados, id);
-            //    if (empleado.Load())
-            //    {
-            //        return View(empleado);
-            //    }
-            //    else
-            //    {
-            //        ViewBag.ErrirMessage = "El id de ensayo ingresado no fue encontrado";
-            //        return View("Error");
-            //    }
+                
             //}
+            //else
+            //{
+            //    ViewBag.ErrirMessage = "El id de ensayo ingresado no fue encontrado";
+            //    return View("Error");
+            //}
+        }
 
-     [HttpGet]
-    public ActionResult Eliminar(string id)
+        [HttpGet]
+    public ActionResult Delete(string id)
     {
             empleados.DeleteOneDocument(id);
             return RedirectToAction("Index");
      }
 
-            //[HttpGet]
-            //public ActionResult Editar(string id)
-            //{
-            //    EmpleadoAbs empleado = empleados.Read(empleadito => empleadito.Cedula_Empleado == id).SingleOrDefault();
-            //    Empleados modelo = new Empleados
-            //    {
-            //        Cedula = empleado.Cedula,
-            //        Nombre = empleado.Nombre,
-            //        PrimerApellido = empleado.PrimerApellido,
-            //        SegundoApellido = empleado.SegundoApellido,
-            //        Direccion = empleado.Direccion,
-            //        Puesto = empleado.Puesto,
-            //        Correo = empleado.Correo,
-            //        Telefono = empleado.Telefono,
-            //        Estado = empleado.Estado
-            //    };
-            //    return View(modelo);
-            //}
+        [HttpGet]
+        public async Task<ActionResult> Edit(string id)
+        {
+            Employee employee = await empleados.GetOneDocument(id);
+            EmployeeViewModel model = new EmployeeViewModel
+            {
+                Email = employee.Email,
+                EntryDate = employee.EntryDate,
+                Identification = employee.Identification,
+                LastName = employee.Lastname,
+                Name = employee.Name,
+                Occupation = employee.Occupation,
+                Phone = employee.Phone,
+                State = employee.State
+            };
 
-            //[HttpPost]
-            //public ActionResult Editar(Empleados modelo)
-            //{
-            //    if (ModelState.IsValid)
-            //    {
-            //        EmpleadoAbs empleado = new EmpleadoModeloConcreto(modelo, empleados);
-            //        empleado.Update();
-            //    }
-
-            //    else
-            //    {
-            //        ModelState.AddModelError("", "Algunos de los campos requeridos no esta presente");
-            //    }
-            //    return RedirectToAction("Index");
-            //}
-            //}
+            return View(model);
         }
+
+        [HttpPost]
+        public ActionResult Edit(string id, EmployeeViewModel modelo)
+        {
+            {
+                if (ModelState.IsValid)
+                {
+
+                    EmployeeParameter employ = modelo;
+                    Employee employee = new Employee(employ);
+                    empleados.UpdateOneDument(id, employee);
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Algunos de los campos requeridos no esta presente");
+                    return View(modelo);
+                }
+            }
+
+            return RedirectToAction("Index");
+        }
+    }
 }
