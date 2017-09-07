@@ -1,0 +1,88 @@
+﻿@model IEnumerable<HogarDeAncianos.Models.PsychologicalViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Identification)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MentalTest)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonalHistory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Monitoring)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PsychologicalTest)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Observations)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedByUser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EditedByUser)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreationTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EditionTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Identification)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MentalTest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PersonalHistory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Monitoring)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PsychologicalTest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Observations)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedByUser)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EditedByUser)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreationTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EditionTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Identification}) |
+            @Html.ActionLink("Details", "Details", new { id=item.Identification }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Identification })
+        </td>
+    </tr>
+}
+
+</table>

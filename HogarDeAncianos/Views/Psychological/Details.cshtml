@@ -1,0 +1,99 @@
+﻿@model HogarDeAncianos.Models.PsychologicalViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PsychologicalViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Identification)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Identification)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MentalTest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MentalTest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonalHistory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonalHistory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Monitoring)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Monitoring)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PsychologicalTest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PsychologicalTest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observations)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observations)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedByUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedByUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EditedByUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EditedByUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreationTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreationTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EditionTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EditionTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Identification}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
