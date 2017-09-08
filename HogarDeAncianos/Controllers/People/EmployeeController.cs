@@ -68,35 +68,30 @@ namespace HogarDeAncianos.Controllers.People
         public async Task<ActionResult> Details(string id)
         {
             Employee employee = await empleados.GetOneDocument(id);
-            EmployeeViewModel model = new EmployeeViewModel
+            if (empleados != null)
             {
-                Email = employee.Email,
-                EntryDate = employee.EntryDate,
-                Identification = employee.Identification,
-                LastName = employee.Lastname,
-                Name = employee.Name,
-                Occupation = employee.Occupation,
-                Phone = employee.Phone,
-                State = employee.State
-            };
+                EmployeeViewModel model = new EmployeeViewModel
+                {
+                    Email = employee.Email,
+                    EntryDate = employee.EntryDate,
+                    Identification = employee.Identification,
+                    LastName = employee.Lastname,
+                    Name = employee.Name,
+                    Occupation = employee.Occupation,
+                    Phone = employee.Phone,
+                    State = employee.State
+                };
 
-            return View(model);
-
-
-
-            //EmpleadoAbs empleado = new EmpleadoModeloConcreto(empleados, id);
-            //if (empleado.Load())
-            //{
-                
-            //}
-            //else
-            //{
-            //    ViewBag.ErrirMessage = "El id de ensayo ingresado no fue encontrado";
-            //    return View("Error");
-            //}
+                return View(model);
+            }
+            else
+            {
+                ViewBag.ErrirMessage = "El id de ensayo ingresado no fue encontrado";
+                return View("Error");
+            }
         }
 
-        [HttpGet]
+    [HttpGet]
     public ActionResult Delete(string id)
     {
             empleados.DeleteOneDocument(id);

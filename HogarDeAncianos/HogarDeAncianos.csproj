@@ -143,10 +143,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\People\EmployeeController.cs" />
+    <Compile Include="Controllers\PsychologicalController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\EmployeeViewModel.cs" />
+    <Compile Include="Models\PsychologicalViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -191,6 +193,11 @@
     <Content Include="Views\Employee\Delete.cshtml" />
     <Content Include="Views\Employee\Details.cshtml" />
     <Content Include="Views\Employee\Edit.cshtml" />
+    <Content Include="Views\Psychological\Create.cshtml" />
+    <Content Include="Views\Psychological\Index.cshtml" />
+    <Content Include="Views\Psychological\Details.cshtml" />
+    <Content Include="Views\Psychological\Delete.cshtml" />
+    <Content Include="Views\Psychological\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
