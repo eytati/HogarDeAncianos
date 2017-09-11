@@ -40,8 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Records\Employee.cs" />
-    <Compile Include="Entities\ExpAdministrative.cs" />
+    <Compile Include="Entities\People\Adult.cs" />
+    <Compile Include="Entities\People\Employee.cs" />
     <Compile Include="Entities\People\Person.cs" />
     <Compile Include="Entities\Records\Psychological.cs" />
     <Compile Include="Entities\People\Relative.cs" />
