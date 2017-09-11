@@ -91,12 +91,12 @@ namespace HogarDeAncianos.Controllers.People
             }
         }
 
-    [HttpGet]
-    public ActionResult Delete(string id)
-    {
+        [HttpGet]
+        public ActionResult Delete(string id)
+        {
             empleados.DeleteOneDocument(id);
             return RedirectToAction("Index");
-     }
+        }
 
         [HttpGet]
         public async Task<ActionResult> Edit(string id)

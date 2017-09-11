@@ -41,8 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmployeeParameter.cs" />
+    <Compile Include="People\RelativeParameter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Records\PsychologicalParameter.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,6 +5,5 @@ c:\users\eytat\documents\visual studio 2017\Projects\HogarDeAncianos\HogarDeAnci
 c:\users\eytat\documents\visual studio 2017\Projects\HogarDeAncianos\HogarDeAncianos.ParametersObjects\obj\Debug\HogarDeAncianos.ParametersObjects.pdb
 C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.ParametersObjects\bin\Debug\HogarDeAncianos.ParametersObjects.dll
 C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.ParametersObjects\bin\Debug\HogarDeAncianos.ParametersObjects.pdb
-C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.ParametersObjects\obj\Debug\HogarDeAncianos.ParametersObjects.csprojResolveAssemblyReference.cache
 C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.ParametersObjects\obj\Debug\HogarDeAncianos.ParametersObjects.dll
 C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.ParametersObjects\obj\Debug\HogarDeAncianos.ParametersObjects.pdb

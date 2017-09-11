@@ -2,13 +2,10 @@
 using HogarDeAncianos.Bussiness.IRepositories;
 using HogarDeAncianos.DataAccess.Connection;
 using MongoDB.Bson;
-using MongoDB.Bson.Serialization;
-using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace HogarDeAncianos.DataAccess.Repositories.People
@@ -35,12 +32,12 @@ namespace HogarDeAncianos.DataAccess.Repositories.People
             {
                 { "Nombre", item.Name },
                 { "Apellido" , item.Lastname },
-                { "Cedula" , item.Identification},
-                { "Correo Electronico" , item.Email},
-                { "Estado Actual" , item.State},
-                { "Fecha de Ingreso" , item.EntryDate},
-                { "Puesto" , item.Occupation},
-                { "Telefono" , item.Phone}
+                { "Cedula" , item.Identification },
+                { "Correo Electronico" , item.Email },
+                { "Estado Actual" , item.State },
+                { "Fecha de Ingreso" , item.EntryDate },
+                { "Puesto" , item.Occupation },
+                { "Telefono" , item.Phone }
             };
 
             IMongoCollection<BsonDocument> collection = ObtenerColeccion();
@@ -111,23 +108,28 @@ namespace HogarDeAncianos.DataAccess.Repositories.People
 
         public bool UpdateOneDument(string id, Employee item)
         {
-
-            IMongoCollection<BsonDocument> collection = ObtenerColeccion();
-
-            BsonDocument empleado = new BsonDocument
+            try
             {
-                { "Nombre", item.Name },
-                { "Apellido" , item.Lastname },
-                { "Cedula" , item.Identification},
-                { "Correo Electronico" , item.Email},
-                { "Estado Actual" , item.State},
-                { "Fecha de Ingreso" , item.EntryDate},
-                { "Puesto" , item.Occupation},
-                { "Telefono" , item.Phone}
-            };
+                IMongoCollection<BsonDocument> collection = ObtenerColeccion();
 
-            collection.ReplaceOneAsync(new BsonDocument("id", item.Identification), new BsonDocument(empleado));
+                BsonDocument empleado = new BsonDocument
+                {
+                    { "Nombre", item.Name },
+                    { "Apellido" , item.Lastname },
+                    { "Cedula" , item.Identification },
+                    { "Correo Electronico" , item.Email },
+                    { "Estado Actual" , item.State },
+                    { "Fecha de Ingreso" , item.EntryDate },
+                    { "Puesto" , item.Occupation },
+                    { "Telefono" , item.Phone }
+                };
 
+                collection.ReplaceOneAsync(new BsonDocument("id", item.Identification), new BsonDocument(empleado));
+            }
+            catch
+            {
+                return false;
+            }
             return true;
         }
     }
