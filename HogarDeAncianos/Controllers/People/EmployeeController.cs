@@ -135,8 +135,6 @@ namespace HogarDeAncianos.Controllers.People
                     return View(modelo);
                 }
             }
-
-            return RedirectToAction("Index");
         }
     }
 }

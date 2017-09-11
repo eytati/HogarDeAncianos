@@ -142,12 +142,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\People\AdultController.cs" />
     <Compile Include="Controllers\People\EmployeeController.cs" />
     <Compile Include="Controllers\People\RelativeController.cs" />
     <Compile Include="Controllers\PsychologicalController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AdultViewModel.cs" />
     <Compile Include="Models\EmployeeViewModel.cs" />
     <Compile Include="Models\PsychologicalViewModel.cs" />
     <Compile Include="Models\RelativeViewModel.cs" />
@@ -205,6 +207,11 @@
     <Content Include="Views\Relative\Delete.cshtml" />
     <Content Include="Views\Relative\Edit.cshtml" />
     <Content Include="Views\Relative\Details.cshtml" />
+    <Content Include="Views\Adult\Index.cshtml" />
+    <Content Include="Views\Adult\Create.cshtml" />
+    <Content Include="Views\Adult\Details.cshtml" />
+    <Content Include="Views\Adult\Delete.cshtml" />
+    <Content Include="Views\Adult\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

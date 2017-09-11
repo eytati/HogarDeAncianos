@@ -7,3 +7,4 @@ C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.ParametersObject
 C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.ParametersObjects\bin\Debug\HogarDeAncianos.ParametersObjects.pdb
 C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.ParametersObjects\obj\Debug\HogarDeAncianos.ParametersObjects.dll
 C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.ParametersObjects\obj\Debug\HogarDeAncianos.ParametersObjects.pdb
+C:\Users\eytat\Documents\GitHub\HogarDeAncianos\HogarDeAncianos.ParametersObjects\obj\Debug\HogarDeAncianos.ParametersObjects.csprojResolveAssemblyReference.cache

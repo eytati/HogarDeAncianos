@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Connections\ConnectionDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\People\AdultRepository.cs" />
     <Compile Include="Repositories\People\EmployeeRepository.cs" />
     <Compile Include="Repositories\People\RelativeRepository.cs" />
     <Compile Include="Repositories\Records\PsychologicalRepository.cs" />
